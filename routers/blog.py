@@ -9,7 +9,7 @@ router = APIRouter(prefix="/blog", tags=["blogs"])
 
 
 # get all blogs
-@router.get("/", status_code=200)
+@router.get("/", status_code=200,response_model=List[schema.ShowBlog])
 def get_all(db: Session = Depends(database.get_db)):
     return blog.get_all(db)
 

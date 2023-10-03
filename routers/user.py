@@ -1,8 +1,7 @@
-from typing import List
-from fastapi import APIRouter, Depends, status, Response, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from repository import user
-import schema, database, models, hashing
+import schema, database
 
 router = APIRouter(prefix="/user", tags=["users"])
 
